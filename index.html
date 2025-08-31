@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">    
+    <title>Happy Birthday Fleur! ♡</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="p-4 md:p-8">
+
+        <!-- Envelope Modal -->
+        <div id="quick-message-modal" class="envelope-modal" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:2000;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.2);">
+            <div class="envelope" style="position:relative;width:90vw;max-width:500px;min-height:220px;background:#fff;border-radius:16px;box-shadow:0 8px 32px rgba(255,105,180,0.15);border:3px dotted #FF69B4;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+                <button id="quick-message-close" style="position:absolute;top:12px;right:12px;background:none;border:none;font-size:1.5rem;color:#FF69B4;cursor:pointer;font-weight:bold;z-index:10;">×</button>
+                <div style="margin-top:32px;text-align:left;width:90%;max-width:440px;white-space:pre-line;overflow-y:auto;max-height:60vh;">
+                  <h3 style="color:#FF69B4;font-size:1.5rem;margin-bottom:0.5em;text-align:center;">A quick message</h3>
+                  <p style="color:#4A4A4A;font-size:1.05rem;line-height:1.5;">
+Kate,
+It’s hard to believe you’re not an actual angel who chose to come to earth for the human experience when I see the way you live your life. Your gentle nature is a teacher, and your kindness is something I have truly been touched by.
+
+I’m so lucky to have you not only as my best friend but also as my support network—you are a guiding light in my life. Everyone who knows you is so lucky, and you should never doubt that. Being able to say that I know you so closely, and to love you as my best friend, is such a privilege—something I am always proud to tell people. And not just because you were Vogue runway–published at 18 😝, but because you are absolutely the most special and perfect person anyone could ever wish to love and know.
+
+It truly feels like divine intervention that we found each other. Whatever butterfly effect brought us together and led us to all that we’ve done, I think of and thank every single day. It brings me so much joy to see you win 🥺. I love sharing in your happiness, and I love that you share in mine. I’m so excited to walk through life with you—I can’t wait to see how you make this year your year!
+
+All my love, forever,
+Jude <3
+                  </p>
+                </div>
+              </div>
+        </div>
+
+        <!-- Floating Decorations -->
+    <div class="floating-decoration deco-1">🌸</div>
+    <div class="floating-decoration deco-2">💖</div>
+    <div class="floating-decoration deco-3">🎀</div>
+    <div class="floating-decoration deco-4">✨</div>
+    <div class="floating-decoration deco-5">🍓</div>
+    <div class="floating-decoration deco-6">🧸</div>
+
+
+    <!-- Main Content Box -->
+    <div class="y2k-container rounded-lg p-4 md:p-8 max-w-4xl mx-auto text-center text-gray-700">
+        
+        <!-- Header -->
+        <header class="mb-8">
+            <div class="marquee-container">
+                <h1 class="scrolling-text glitter-text text-5xl md:text-7xl font-bold tracking-wider">
+                    Happy Birthday Kate!
+                </h1>
+            </div>
+            <p class="text-pink-400 text-2xl mt-2">~*~ i love you so much ~*~</p>
+        </header>
+
+        <!-- Decorations -->
+        <div class="flex justify-center items-center space-x-4 my-6 text-5xl">
+            <img src="images/cutegif.gif" alt="Cute animation" class="w-16 h-16">
+            <span class="text-pink-300">♡</span>
+            <img src="images/rilakkuma.png" alt="Rilakkuma" class="w-16 h-16">
+             <span class="text-pink-300">♡</span>
+            <img src="images/pinkcute.png" alt="Cute pink character" class="w-16 h-16">
+        </div>
+        
+        <hr class="border-t-2 border-dashed border-pink-300 my-8">
+
+        <!-- Game Section -->
+        <section id="game-section" class="mb-12">
+            <div class="flex justify-center items-center mb-4">
+                <button id="prev-game-btn" class="arrow-button text-4xl text-pink-400 hover:text-pink-600 transition-transform duration-300 transform hover:scale-125 mr-4 opacity-50 cursor-not-allowed" disabled>◄</button>
+                <h2 id="game-title" class="text-3xl text-pink-500">A Little Puzzle Game!</h2>
+                <button id="next-game-btn" class="arrow-button text-4xl text-pink-400 hover:text-pink-600 transition-transform duration-300 transform hover:scale-125 ml-4">►</button>
+            </div>
+
+            <!-- Game Container -->
+            <div id="games-wrapper" class="relative">
+                <!-- Puzzle Game -->
+                <div id="puzzle-game-container">
+                    <p class="mb-4 text-lg">Swap the pieces to solve the puzzle of us! ♡</p>
+                    <div id="puzzle-container" class="mx-auto bg-pink-100 rounded-md overflow-hidden relative shadow-lg">
+                        <canvas id="puzzle-canvas"></canvas>
+                    </div>
+                     <button id="shuffle-button" class="mt-4 px-6 py-2 bg-pink-400 text-white rounded-full border-2 border-white shadow-md hover:bg-pink-500 transition-all text-xl">Shuffle!</button>
+                </div>
+
+                <!-- Maze Game (Initially Hidden) -->
+                <div id="maze-game-container" style="display: none;">
+                    <p class="mb-4 text-lg">Guide rilakkuma to korillaBOOMa! drag to move, diva. ♡</p>
+                    <div id="maze-canvas-container" class="mx-auto rounded-md overflow-hidden relative shadow-lg" style="width: 400px; height: 400px; background-color: #fdf2f8; border: 1px solid #FFC0CB;">
+                        <canvas id="maze-canvas" width="400" height="400"></canvas>
+                    </div>
+                    <!-- Maze Controls -->
+                    <div id="maze-controls" class="mt-4">
+                        <div class="grid grid-cols-3 gap-2 w-48 mx-auto">
+                            <div></div>
+                            <button id="maze-up" class="maze-arrow-btn">▲</button>
+                            <div></div>
+                            <button id="maze-left" class="maze-arrow-btn">◄</button>
+                            <div class="h-16 w-16"></div> <!-- center spacer -->
+                            <button id="maze-right" class="maze-arrow-btn">►</button>
+                            <div></div>
+                            <button id="maze-down" class="maze-arrow-btn">▼</button>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emote Game (Initially Hidden) -->
+                <div id="emote-game-container" style="display: none;">
+                    <p class="mb-4 text-lg">Guess the phrase from the emotes! ♡</p>
+                    <div id="emote-sequence" class="text-5xl mb-4">
+                        <span>🖼️</span><span>👩</span><span>😁</span>
+                    </div>
+                    <div class="flex justify-center items-center gap-2">
+                        <input type="text" id="emote-answer-input" placeholder="Your guess..." class="text-xl px-4 py-2 rounded-full border-2 border-pink-300 focus:border-pink-500 focus:ring-pink-500 outline-none">
+                        <button id="check-emote-answer" class="px-6 py-2 bg-pink-400 text-white rounded-full border-2 border-white shadow-md hover:bg-pink-500 transition-all text-xl">Check</button>
+                    </div>
+                    <p id="emote-feedback" class="text-lg mt-4 h-6"></p> <!-- For feedback -->
+                </div>
+
+                <!-- Word Search Game (Initially Hidden) -->
+                <div id="wordsearch-game-container" style="display: none;">
+                    <div class="wordsearch-game-center">
+                        <h2 style="color:#e75480; text-align:center;">Word Search</h2>
+                        <div id="wordsearch-words" style="margin-bottom:1em; text-align:center;"></div>
+                        <div id="wordsearch-container"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t-2 border-dashed border-pink-300 my-8">
+
+        <!-- Envelopes Section -->
+        <section>
+            <h2 class="text-3xl text-pink-500 mb-6">Photo Albums</h2>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+                <!-- Album 1 -->
+                <div class="album-cover w-64 h-64 relative flex flex-col items-center justify-center cursor-pointer" data-album="gagliari">
+                    <img src="images/cagliari.jpeg" alt="Gagliari Album Cover" class="w-40 h-40 object-cover rounded-lg shadow-lg mb-2">
+                    <div class="text-xl text-pink-600 font-bold">Gagliari</div>
+                </div>
+                <!-- Album 2 -->
+                <div class="album-cover w-64 h-64 relative flex flex-col items-center justify-center cursor-pointer" data-album="tokyoo">
+                    <img src="images/cam.jpeg" alt="Tokyoo Album Cover" class="w-40 h-40 object-cover rounded-lg shadow-lg mb-2">
+                    <div class="text-xl text-pink-600 font-bold">Tokyoo &gt;0&lt;</div>
+                </div>
+                <!-- Album 3 -->
+                <div class="album-cover w-64 h-64 relative flex flex-col items-center justify-center cursor-pointer" data-album="lilledon">
+                    <img src="images/lilledon.jpeg" alt="Lilledon Album Cover" class="w-40 h-40 object-cover rounded-lg shadow-lg mb-2">
+                    <div class="text-xl text-pink-600 font-bold">Lilledon</div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Letter Modal -->
+    <!-- Album Modal -->
+    <div id="album-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:1000;">
+        <div id="album-modal-blur" style="position:absolute; top:0; left:0; width:100vw; height:100vh; backdrop-filter: blur(8px); background: rgba(255, 192, 203, 0.2); z-index:0;"></div>
+        <div id="album-modal-content" class="bg-white rounded-lg p-6 shadow-lg flex flex-col items-center" style="position:absolute; top:32px; left:50%; transform:translateX(-50%); z-index:1; min-width:350px;">
+            <div id="album-title" class="text-2xl font-bold text-pink-600 mb-4"></div>
+            <div class="flex items-center mb-2">
+                <button id="album-prev" class="px-2 py-1 bg-pink-200 rounded-l">&#8592;</button>
+                <img id="album-image" src="" alt="Album Image" class="w-64 h-64 object-cover rounded-lg mx-2">
+                <button id="album-next" class="px-2 py-1 bg-pink-200 rounded-r">&#8594;</button>
+            </div>
+            <div id="album-image-message" class="w-full mt-2 p-2 text-center text-gray-700 text-lg"></div>
+            <button id="album-modal-close" class="mt-4 px-4 py-2 bg-pink-400 text-white rounded">Close</button>
+        </div>
+    </div>
+
+    <!-- Custom message box for puzzle completion -->
+    <div id="puzzle-complete-modal">
+        <p id="puzzle-message-text"></p>
+        <button id="puzzle-message-close-button">OK</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="envelope-script.js"></script>
+    <script src="cursor-trail.js"></script>
+    <script src="maze.js"></script>
+    <script src="emote-game.js"></script>
+            <script src="wordsearch-game.js"></script>
+</body>
+</html>
